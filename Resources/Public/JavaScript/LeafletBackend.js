@@ -143,6 +143,8 @@ define(['jquery', 'TYPO3/CMS/Backend/Icons', 'TYPO3/CMS/TtAddress/leaflet-core-1
                 $('input[id="' + LeafBE.$fieldLatActive + '"]').prop('checked', true);
                 // close map after import of coordinates.
                 $('#t3js-location-map-wrap').removeClass('active');
+                // fire change event on input field to revalidate backend fields
+                $('input[data-formengine-input-name="' + LeafBE.$fieldLat + '"]').change();
             });
             // close overlay without any further action
             $('#t3js-ttaddress-close-map').on('click', function () {
